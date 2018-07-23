@@ -1,0 +1,38 @@
+.l-contain {
+	margin: auto;
+	width: 100%;
+	max-width: 1030px;
+	padding: 0 20px;
+}
+
+.grid-contain {
+	margin-top: 20px;
+}
+
+.grid-post {
+	position: relative;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.grid-post a {
+	text-decoration: none;
+}
+
+.post-info-container {  }
+.post-title {
+	overflow: hidden;
+	padding: 10px 20px;
+	line-height: 40px;
+	font-size: 40px;
+}
+
+.post-excerpt {
+	padding: 0 20px;
+}
+
+.post-permalink {
+	display: block;
+	height: 100%;
+}

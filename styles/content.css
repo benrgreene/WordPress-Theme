@@ -1,0 +1,90 @@
+body {
+	position: relative;
+	display: flex;
+	flex-direction: column; 
+	min-height: 100vh;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+p {
+	margin-top: 30px;
+	line-height: 27px;
+}
+
+@media(max-width: 770px) {
+	#wpadminbar {
+		display: none;
+	}
+}
+
+.site-content {
+	flex-grow: 1;
+	padding-top: 76px;	
+	padding-bottom: 20px;
+	font-family: 'Ubuntu';
+}
+
+@media(max-width: 770px) {
+	.site-content {
+		padding-top: 55px;	
+	}
+
+	.site-nav-menu .search-form {
+		text-align: center;
+	}
+}
+
+.the-post-details {
+	color: #888;
+}
+
+.the-post-content {
+	margin-top: 50px;
+}
+
+.the-post-content iframe {
+	width: 100%;
+	height: 500px;
+}
+
+/*
+	-------------------------------------------------------
+		Forms
+	-------------------------------------------------------
+*/
+
+input[type="text"] {
+	padding: 5px 15px;
+	font-size: 20px;
+}
+
+.button-container {
+	margin: 20px;
+	text-align: center;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 5px;
+	padding: 5px 20px;
+	cursor: pointer;
+	font-size: 20px;
+	text-transform: capitalize;
+}
+
+/*
+	-------------------------------------------------------
+	Extras
+	-------------------------------------------------------
+*/
+
+@media(min-width: 770px) {
+	.mobile-only {
+		display: none;
+	}
+}
+
+.user-dates-section {
+	text-transform: capitalize;
+}

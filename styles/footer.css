@@ -1,0 +1,25 @@
+.site-footer {
+	padding: 20px 0;
+}
+
+.footer-widgets {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.footer-widgets__title {
+	font-size: 26px;
+}
+
+.site-footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+@media(max-width: 770px) {
+	.site-footer ul {
+		flex-direction: column;
+		text-align: center;
+	}	
+}

@@ -1,0 +1,98 @@
+/*
+	Theme Defaults
+*/
+* {
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+html, body, ul {
+	margin: 0px !important;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/*
+	Header Styles
+*/
+.site-header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+	box-shadow: 1px 1px 10px black;
+}
+
+.site-header .l-contain {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 15px;
+	font-family: 'Baloo Thambi';
+}
+
+.site-title {
+	margin: 0;
+}
+
+.site-title a {
+	color: #000;
+	text-decoration: none;
+}
+
+.site-logo {
+	flex-shrink: 1;
+	display: inline-block;
+}
+
+.site-nav-menu {
+	display: block;
+	flex-grow: 0;
+	max-width: 100%;
+	line-height: 75px;
+	text-align: right;
+}
+
+.site-nav-menu ul.menu {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.site-nav-menu ul li {
+	margin-left: 15px;
+}
+
+@media(max-width: 770px) {
+	.site-header .l-contain .site-logo {
+		margin: auto;
+	}
+
+	.site-header .l-contain li {
+		line-height: 25px;
+	}
+
+	.site-nav-menu {
+		display: none;
+	}	
+
+	.site-nav-menu ul {
+		justify-content: center;
+	}
+}
+
+/*
+	Admin Stuff
+*/
+.is-logged-in {
+	padding-top: 30px;
+}
+.is-logged-in .site-header {
+	top: 30px;
+}

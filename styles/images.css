@@ -1,0 +1,8 @@
+.page-hero {
+	margin-bottom: 20px;
+	height: 350px;	
+	max-height: 60%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
