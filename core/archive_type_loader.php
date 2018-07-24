@@ -41,24 +41,20 @@ class BG_Post_Archive_Delegator {
 			return;
 		}
 
-		$posts_to_print;
+		$args = array(
+			'posts_per_page'	=> $this->num_posts_to_grab,
+			'offset'			    => $this->post_on,
+			'orderby'		      => 'id',
+			'order'			      => 'DESC',
+		);
+		
 		if( 'search' == $this->post_type ):
-			$posts_to_print = get_posts( array (
-				's'					      => get_search_query(),
-				'posts_per_page'	=> $this->num_posts_to_grab,
-				'offset'			    => $this->post_on,
-				'orderby'		      => 'id',
-				'order'			      => 'DESC',
-			) );
+			$args['s'] = get_search_query();
 		else:
-			$posts_to_print = get_posts( array (
-				'post_type'			 => $this->post_type,
-				'posts_per_page' => $this->num_posts_to_grab,
-				'offset'			   => $this->post_on,
-				'orderby'		     => 'id',
-				'order'			     => 'DESC',
-			) );
+			$args['post_type'] = $this->post_type;
 		endif;
+
+		$posts_to_print = get_posts( $args );
 
 		$this->post_on = count( $posts_to_print ) + $this->post_on;
 		$this->print_posts( $posts_to_print );
@@ -80,14 +76,9 @@ class BG_Post_Archive_Delegator {
 	// If there are more posts yet to be displayed, 
 	// 		print out an AJAX load more button.
 	function print_ajax_button() {
-		if( $this->max_num_posts > $this->post_on ): ?>
-			<div class='button-container'>
-				<div id='js-ajax-load-posts' class='load-posts button'>
-					<input type='hidden' id='post-type' value="<?php echo str_replace( 'bgpt_', '', $this->post_type ); ?>">
-					<input type='hidden' id='post-on' value="<?php echo $this->post_on; ?>"> Load More Posts
-				</div>
-			</div>
-		<?php endif;
+		if( $this->max_num_posts > $this->post_on ):
+			include locate_template( 'templates/partials/ajax-load-more.php' );
+		endif;
 	}
 
 	function print_post( $the_post ) {
