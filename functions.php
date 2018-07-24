@@ -11,6 +11,9 @@ include 'core/endpoints.php';
 include 'core/widgets.php';
 include 'core/nav-walker.php';
 
+// Theme specific functionality
+include 'core/theme/theme-filters.php';
+
 // admin pages
 include 'core/settings.php';
 new BRG_Theme_Settings_Admin_Interface_Controller();
