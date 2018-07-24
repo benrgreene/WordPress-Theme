@@ -198,7 +198,7 @@ input[type="text"] {
 	}
 }
 
-.post-info-container {
+.post--grid .post-info-container {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -209,7 +209,7 @@ input[type="text"] {
 	transition: height .5s;
 }
 
-.post-title {
+.post--grid .post-title {
 	overflow: hidden;
 	height: 100px;
 	padding: 10px 20px;

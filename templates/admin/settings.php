@@ -5,6 +5,20 @@
   <form method="POST" action="options.php" novalidate="novalidate">
     <?php settings_fields( 'brg_theme_group' ); ?>
     
+    <h2>Theme Colors</h2>
+    <table>
+      <tr>
+        <td>Primary Theme Color</td>
+        <td><input name="primary_theme_color" id="primary_theme_color" value="<?php echo get_option('primary_theme_color'); ?>" /></td>
+        <td>This will be the main color used as the background color.</td>
+      </tr>
+      <tr>
+        <td>Accent Theme Color</td>
+        <td><input name="accent_theme_color" id="accent_theme_color" value="<?php echo get_option('accent_theme_color'); ?>" /></td>
+        <td>The accent color will be used as the link color.</td>
+      </tr>
+    </table>
+
     <h2>Archives</h2>
     <?php $post_types = apply_filters( 'brg/archived_post_types', array() ); ?>
     <table>

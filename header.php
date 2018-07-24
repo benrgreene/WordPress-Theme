@@ -9,7 +9,6 @@
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/img/favicon.ico'; ?>" type="image/x-icon">
 		<?php load_theme_info(); ?>
-		<link rel='stylesheet' type='text/css' href="<?php echo get_template_directory_uri() . '/assets/main.css'; ?>" />
 	</head>
 	<body class="<?php echo apply_filters('brg/body_class', ''); ?>">
 		<input type='hidden' id='site_base_url' value="<?php echo get_site_url(); ?>"/>

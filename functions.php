@@ -36,6 +36,10 @@ function load_theme_info() {
 }
 
 add_action( 'wp_enqueue_scripts', function() {
+	// Styles first 
+	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/main.css' );
+	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/assets/theme-styles.css' );
+
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'main_script', get_template_directory_uri() . '/js/scripts.js', array(), '1.3', true );
 
