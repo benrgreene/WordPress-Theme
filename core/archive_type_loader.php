@@ -92,9 +92,15 @@ class BG_Post_Archive_Delegator {
 
 	function print_post( $the_post ) {
 		global $post;
+
+		// Need the template to display the post with
+		$archive_display_type = get_option( 'brg_settings_display_' . $this->post_type, 'grid' );
+		// Allow overriding of the templates for specific post types
+		$archive_display_type = apply_filters( 'brg/display_archive_' . $this->post_type, $archive_display_type );
+
 		$post = $the_post;
 		setup_postdata( $post );
-		get_template_part( 'templates/excerpts/excerpt', get_post_format() );
+		get_template_part( 'templates/excerpts/excerpt', $archive_display_type );
 		wp_reset_postdata();
 	}
 }

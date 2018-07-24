@@ -11,6 +11,11 @@ class BRG_Theme_Settings_Admin_Interface_Controller {
     );
 
     public function __construct() {
+        $post_types = apply_filters( 'brg/archived_post_types', array() );
+        foreach( $post_types as $post_type ) {
+            $this->plugin_settings[] = 'brg_settings_display_' . $post_type;
+        }
+
         add_action( 'admin_menu', array( $this, 'add_admin_menu') );
         add_action( 'admin_init', array( $this, 'register_plugin_settings') );
     }

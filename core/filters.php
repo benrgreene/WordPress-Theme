@@ -46,3 +46,8 @@ function brg_add_body_classes( $classes ) {
 
   return $classes;
 }
+
+add_filter( 'brg/archived_post_types', 'brg_add_archived_post_types' );
+function brg_add_archived_post_types( $post_types ) {
+  return array( 'post', 'notices', 'events', 'audio' );
+}
