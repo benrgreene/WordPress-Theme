@@ -37,3 +37,8 @@
     <?php submit_button(); ?>
   </form>
 </div>
+<style>
+  td + td {
+    padding-left: 25px;
+  }
+</style>
