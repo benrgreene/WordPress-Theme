@@ -1,5 +1,7 @@
 .site-footer {
 	padding: 20px 0;
+	background-color: #111;
+	color: #fff;
 }
 
 .footer-widgets {
@@ -17,7 +19,6 @@
 }
 
 .site-footer a {
-	color: #FFF;
 	text-decoration: none;
 }
 

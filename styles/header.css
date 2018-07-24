@@ -27,6 +27,7 @@ ul {
 	left: 0px;
 	right: 0px;
 	z-index: 100;
+	background-color: #FFF;
 	box-shadow: 1px 1px 10px black;
 }
 
@@ -90,9 +91,6 @@ ul {
 /*
 	Admin Stuff
 */
-.is-logged-in {
-	padding-top: 30px;
-}
 .is-logged-in .site-header {
 	top: 30px;
 }
