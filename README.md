@@ -10,3 +10,7 @@ There are also events built into the theme, for if the site is for an orginizati
 In the theme settings there are a couple things to set:
 
 * A list of post types, and what style to display them as. 
+
+## Filters
+
+* `brg/displayed_member_fields`: returns array of ACF field slugs which are displayed on the user account pages. 

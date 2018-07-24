@@ -6,9 +6,7 @@ class BRG_Theme_Settings_Admin_Interface_Controller {
     const SETTINGS_GROUP      = 'brg_theme_group';
     const SETTINGS_NONCE_NAME = 'brg_theme_nonce_name';
 
-    private $plugin_settings = array(
-        'brg_settings_account_page_fields',
-    );
+    private $plugin_settings = array();
 
     public function __construct() {
         $post_types = apply_filters( 'brg/archived_post_types', array() );
