@@ -12,6 +12,10 @@
 	font-size: 26px;
 }
 
+.footer-widgets ul {
+	flex-direction: column;
+}
+
 .site-footer a {
 	color: #FFF;
 	text-decoration: none;

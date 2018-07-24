@@ -12,7 +12,7 @@
   position: relative;;
 }
 
-.menu > .menu-item > a {
+.menu .menu-item a {
   padding: 10px 4px;
 }
 
@@ -30,15 +30,15 @@
 }
 
 @media(min-width: 771px) {
-  .menu > .menu-item + .menu-item {
+  .site-header .menu > .menu-item + .menu-item {
     margin-left: 15px;
   }
 
-  .sub-menu .menu-item + .menu-item {
+  .site-header .sub-menu .menu-item + .menu-item {
     margin-top: 10px;
   }
 
-  .sub-menu {
+  .site-header .sub-menu {
     box-sizing: border-box;
     position: absolute;
     top: 100%;
@@ -54,7 +54,7 @@
 */
 
 @media(max-width: 770px) {
-  .menu {
+  .site-header .menu {
     position: fixed;
     top: 0;
     left: 0;

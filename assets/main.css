@@ -124,31 +124,6 @@ input[type="text"] {
 .user-dates-section {
 	text-transform: capitalize;
 }
-.site-footer {
-	padding: 20px 0;
-}
-
-.footer-widgets {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.footer-widgets__title {
-	font-size: 26px;
-}
-
-.site-footer a {
-	color: #FFF;
-	text-decoration: none;
-}
-
-@media(max-width: 770px) {
-	.site-footer ul {
-		flex-direction: column;
-		text-align: center;
-	}	
-}
 .l-contain {
 	margin: auto;
 	width: 100%;
@@ -228,6 +203,83 @@ input[type="text"] {
 .post-permalink {
 	display: block;
 	height: 100%;
+}
+
+.post--stacked {
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	align-items: center; 
+	width: 100%;
+	text-decoration: none;
+}
+
+.post--stacked::after {
+	content: ">";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+	transition: font-size .2s;
+}
+
+.post--stacked .post__media {
+	width: 0;
+	overflow: hidden;
+	transition: width .2s, margin-right .2s;
+}
+
+.post--stacked:hover .post__media {
+	margin-right: 30px;
+	width: 175px;
+}
+
+.post--stacked:hover::after {
+	font-size: 30px;
+}
+
+.post--stacked .post__media img {
+	width: 175px;
+	height: auto;
+}
+
+.post--stacked .post__title {
+	margin: 0 0 15px;
+	font-size: 35px;
+}
+
+.post--stacked .post__excerpt {
+
+}
+.site-footer {
+	padding: 20px 0;
+}
+
+.footer-widgets {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.footer-widgets__title {
+	font-size: 26px;
+}
+
+.footer-widgets ul {
+	flex-direction: column;
+}
+
+.site-footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+@media(max-width: 770px) {
+	.site-footer ul {
+		flex-direction: column;
+		text-align: center;
+	}	
 }
 /*
 	Theme Defaults
@@ -349,7 +401,7 @@ ul {
   position: relative;;
 }
 
-.menu > .menu-item > a {
+.menu .menu-item a {
   padding: 10px 4px;
 }
 
@@ -367,15 +419,15 @@ ul {
 }
 
 @media(min-width: 771px) {
-  .menu > .menu-item + .menu-item {
+  .site-header .menu > .menu-item + .menu-item {
     margin-left: 15px;
   }
 
-  .sub-menu .menu-item + .menu-item {
+  .site-header .sub-menu .menu-item + .menu-item {
     margin-top: 10px;
   }
 
-  .sub-menu {
+  .site-header .sub-menu {
     box-sizing: border-box;
     position: absolute;
     top: 100%;
@@ -391,7 +443,7 @@ ul {
 */
 
 @media(max-width: 770px) {
-  .menu {
+  .site-header .menu {
     position: fixed;
     top: 0;
     left: 0;

@@ -28,11 +28,3 @@ function the_services_dates( $field_data ) {
   }
   echo '</ul>';
 }
-
-/**
- * Display the audio recording of the post
- */
-function display_audio_recording() {
-  $file = get_field( 'audio_file' );
-  echo '<audio class="audio-player" controls><source src="' . $file['url'] . '"></source>Your browser doesn\'t support audio tags</audio>';
-}

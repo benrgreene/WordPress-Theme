@@ -36,7 +36,6 @@ class BRG_Theme_Settings_Admin_Interface_Controller {
     }
 
     public function register_plugin_settings() {
-        error_log('message');
         foreach ( $this->plugin_settings as $setting ) {
             register_setting( self::SETTINGS_GROUP, $setting );
         }
