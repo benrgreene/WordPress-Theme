@@ -7,7 +7,7 @@ class BRG_Theme_Settings_Admin_Interface_Controller {
     const SETTINGS_NONCE_NAME = 'brg_theme_nonce_name';
 
     private $plugin_settings = array(
-        'primary_theme_color', 'accent_theme_color'
+        'primary_theme_color', 'primary_theme_color_light', 'accent_theme_color'
     );
 
     public function __construct() {
