@@ -17,3 +17,7 @@ a {
   color: primary_theme_color;
   background-color: white;
 }
+
+.post__title  {
+  color: primary_theme_color;
+}

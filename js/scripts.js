@@ -12,6 +12,11 @@
 	});
 
 	$(document).on('click', '#js-ajax-load-posts', function(event) {
+    if( 'disabled' == $(this).attr('disabled') ) {
+      return;
+    }
+    $(this).attr('disabled', 'disabled');
+    
 		var post_on = $('#post-on').val();
 		var post_type = $('#post-type').val();
 

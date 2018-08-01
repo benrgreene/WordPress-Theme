@@ -73,6 +73,12 @@ input[type="text"] {
 	text-transform: capitalize;
 }
 
+.load-posts[disabled="disabled"] {
+	color: #999 !important;
+  border-color: #999 !important;
+  background-color: #FFF !important;
+}
+
 /*
 	-------------------------------------------------------
 	Extras
