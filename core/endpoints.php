@@ -11,19 +11,20 @@ function brg_add_rest_endpoints() {
 
 // Return basic info of each post
 function brg_get_search_results( WP_REST_Request $request ) {
+  global $post;
   $query = new WP_Query( array( 
     's' => $request->get_param('search'),
   ) );
 
-  $to_return = array();
-  foreach( $query->posts as $a_post ) {
-    $to_return[] = array(
-      'title'     => $a_post->post_title,
-      'excerpt'   => $a_post->post_excerpt,
-      'post_date' => $a_post->post_date,
-      'post_link' => get_permalink( $a_post ),
-    );
+  ob_start();
+  $to_return = '';
+  echo '<div class="grid-contain">';
+  foreach( $query->posts as $post ) {
+    setup_postdata( $post );
+    get_template_part( 'templates/excerpts/excerpt', 'grid' );
   }
+  echo '</div>';
+  $to_return = ob_get_clean();
 
-  return json_encode( $to_return );
+  return $to_return;
 }

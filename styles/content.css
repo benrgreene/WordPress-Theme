@@ -94,3 +94,68 @@ input[type="text"] {
 .user-dates-section {
 	text-transform: capitalize;
 }
+
+/**
+  Add the base dialog styling  
+*/
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 0;
+  padding: 20px;
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+
+dialog .gird--contain {
+	overflow: scroll;
+}
+
+dialog::backdrop {
+  background-color: rgba(10,10,10, 0.8);
+}
+
+.dialog-close {
+  content: 'X';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.dialog-previous,
+.dialog-next {
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  transform: translateY(-50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+.dialog-previous {
+  left: 0;
+}
+
+.dialog-next {
+  right: 0;
+}
+
+.dialog-content {
+  text-align: center;
+}
+
+.dialog-content[data-current-gallery-index="false"] ~ .dialog-previous,
+.dialog-content[data-current-gallery-index="false"] ~ .dialog-next {
+  display: none;
+}
+
+.dialog-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: scale-down;
+}

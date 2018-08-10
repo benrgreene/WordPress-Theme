@@ -8,6 +8,7 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/img/favicon.ico'; ?>" type="image/x-icon">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 		<?php load_theme_info(); ?>
 	</head>
 	<body class="<?php echo apply_filters('brg/body_class', ''); ?>">
@@ -26,4 +27,5 @@
 				<button id="menu-toggle" class="mobile-only menu-toggle"><i class="fas fa-bars">Test</i></button>
 			</div>
 		</div>
+		<dialog id="js-dialog"><div class="dialog-content"><?php echo do_shortcode( '[search_bar]' ); ?></div><i class="dialog-close fa fa-times-circle"></i></dialog>
 		<div class='site-content'>
