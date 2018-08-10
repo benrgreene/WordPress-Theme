@@ -57,3 +57,13 @@ add_filter( 'brg/archived_post_types', 'brg_add_archived_post_types' );
 function brg_add_archived_post_types( $post_types ) {
   return array( 'post', 'notices', 'events' );
 }
+
+// Add titles to the archive pages
+add_action( 'before_site_content', 'brg_display_archive_title' );
+function brg_display_archive_title() {
+  if( is_archive() ) {
+    echo '<div class="l-contain">';
+    echo sprintf( '<h1 class="page_title">%s</h1>', get_the_archive_title() );
+    echo '</div>';
+  }
+}
