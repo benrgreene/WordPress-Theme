@@ -1,9 +1,15 @@
 .page_title {
   border-bottom: 5px solid primary_theme_color;
+  color: primary_theme_color;
+}
+
+h2 {
+  color: primary_theme_color;
+  border-bottom: 2px solid primary_theme_color;
 }
 
 a {
-  color: accent_theme_color;
+  color: primary_light_theme_color;
 }
 
 .button {
@@ -19,5 +25,18 @@ a {
 }
 
 .post__title  {
-  color: primary_theme_color;
+  color: primary_light_theme_color;
+}
+
+.site-footer {
+  background-color: primary_theme_color;
+  color: accent_theme_color;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+.site-header {
+  background-color: header_background_color;
 }

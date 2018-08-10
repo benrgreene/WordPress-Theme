@@ -1,9 +1,15 @@
 .page_title {
   border-bottom: 5px solid #005412;
+  color: #005412;
+}
+
+h2 {
+  color: #005412;
+  border-bottom: 2px solid #005412;
 }
 
 a {
-  color: #6767AA;
+  color: ;
 }
 
 .button {
@@ -19,5 +25,18 @@ a {
 }
 
 .post__title  {
-  color: #005412;
+  color: ;
+}
+
+.site-footer {
+  background-color: #005412;
+  color: #6767AA;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+.site-header {
+  background-color: ;
 }
