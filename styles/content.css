@@ -48,6 +48,27 @@ p {
 	height: 500px;
 }
 
+.single-page--sidebar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-page--sidebar .main-content {
+  width: 70%;
+}
+
+.sidebar {
+  margin-top: 20px;
+  width: 25%;
+}
+
+@media(max-width: 770px) {
+  .sidebar,
+  .main-content {
+    width: 100%;
+  } 
+}
+
 .post__categories,
 .post__categories li {
   display: inline;
