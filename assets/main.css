@@ -48,6 +48,23 @@ p {
 	height: 500px;
 }
 
+.post__categories,
+.post__categories li {
+  display: inline;
+}
+
+.post__categories {
+  margin-bottom: 20px;
+}
+
+.post__categories li {
+  margin-left: 10px;
+}
+
+.post__categories li:not(:last-of-type)::after {
+  content: ',';
+}
+
 /*
 	-------------------------------------------------------
 		Forms

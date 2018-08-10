@@ -28,3 +28,17 @@ function the_services_dates( $field_data ) {
   }
   echo '</ul>';
 }
+
+function brg_the_categories() {
+  $categories = wp_get_post_categories( get_the_ID() );
+  if( !is_wp_error( $categories ) && 0 < count( $categories ) ) {
+    echo '<span>Categories:</span>';
+    echo '<ul class="post__categories">';
+    foreach( $categories as $category ) {
+      $term = get_term( $category, 'category' );
+      $term_link = get_term_link( $category );
+      echo sprintf( '<li><a href="%s">%s</a></li>', $term_link, $term->name );
+    }
+    echo '</ul>';
+  }
+}
