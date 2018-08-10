@@ -24,7 +24,7 @@
 						'walker' => new BRG_Menu_Walker()
 					) ); ?>
 				</div>
-				<button id="menu-toggle" class="mobile-only menu-toggle"><i class="fas fa-bars">Test</i></button>
+				<button id="menu-toggle" class="mobile-only menu-toggle"><i class="fas fa-bars"></i></button>
 			</div>
 		</div>
 		<dialog id="js-dialog"><div class="dialog-content"><?php echo do_shortcode( '[search_bar]' ); ?></div><i class="dialog-close fa fa-times-circle"></i></dialog>
