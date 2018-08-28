@@ -36,7 +36,10 @@
 
 				if(0 < $('#last-post-present').length) {
 					$('#js-ajax-load-posts').hide(300);
-				}
+				} else {
+          // There are posts left, so enable the button again
+          $('#js-ajax-load-posts').removeAttr('disabled');
+        }
 			}
 		});
 	});
