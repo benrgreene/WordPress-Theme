@@ -17,11 +17,20 @@ class BG_Post_Archive_Delegator {
 			return;
 		endif;
 
-		$this->post_type = $post_type;
-		$this->max_num_posts = count( get_posts( array( 
+		$args = array( 
 			'post_type'			 => $this->post_type,
 			'posts_per_page' => -1,
-		) ) );
+		);
+
+		if( !empty( get_query_var( 'cat' ) ) ) {
+			$this->category = get_category( get_query_var( 'cat' ) );
+			$args['category'] = $this->category->term_id;
+		} else {
+			$this->category = false;
+		}
+
+		$this->post_type = $post_type;
+		$this->max_num_posts = count( get_posts( $rgs ) );
 	}
 
 	function setup_as_search_archive( $post_on, $search_for ) {
