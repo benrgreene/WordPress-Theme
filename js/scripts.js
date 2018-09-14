@@ -1,10 +1,19 @@
 (function($) {
 	
-	var api_endpoint = ''; 
+	var api_endpoint = '';
+  var category = '';
 
 	$(document).ready(function(){
 		api_endpoint = $('#site_base_url').val() + '/wp-json/';
-		// Need fitvids and magnific.
+    if( siteInfo.category != false && siteInfo.category != 'false' ) {
+      category = siteInfo.category + '/';
+    }
+		
+    // make sure the site content wrapper has the proper padding
+    setTimeout(function() {
+      var padding = $('.site-header').height();
+      $('.site-content').css('padding-top', padding);
+    }, 10);
 	});
 
 	$(document).on('click', '#js-ajax-load-posts', function(event) {
@@ -24,10 +33,10 @@
 		}
 		
 		$.ajax({
-			url: api_endpoint + post_type + '/get-posts/' + post_on,
+			url: api_endpoint + post_type + '/get-posts/' + category + post_on,
 			method: 'GET',
 			success: function(data) {
-				$('#post-on').val(parseInt(post_on) + 3);
+				$('#post-on').val(parseInt(post_on) + parseInt(siteInfo.postsPerPage,10));
 				$('.grid-contain').append(data);
 
 				if(0 < $('#last-post-present').length) {

@@ -29,13 +29,19 @@ function brg_get_next_posts_callback() {
     'methods' => 'GET',
     'callback'  => 'brg_load_next_posts',
   ) );
+
+  // This is the category callback
+  register_rest_route( 'post', 'get-posts/(?P<category_id>[0-9]+)/(?P<on>[0-9-]+)', array(
+    'methods' => 'GET',
+    'callback'  => 'brg_load_next_posts',
+  ) );
 }
 
 // Callback for REST endpoint to load the next page of results
 function brg_load_next_posts( $data ) {
+  $category_id = isset( $data['category_id'] ) ? $data['category_id'] : false;
   $loader = new BG_Post_Archive_Delegator(
-    'post', 
-    $data['on']
+    'post', $data['on'], false, $category_id
   );
   
   ob_start();

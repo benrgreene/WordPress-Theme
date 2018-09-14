@@ -38,6 +38,12 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'main_script', get_template_directory_uri() . '/js/scripts.js', array(), '1.3', true );
+	
+	$cat_obj = get_category( get_query_var( 'cat' ) );
+	wp_localize_script( 'main_script', 'siteInfo', array(
+		'postsPerPage' => get_option( 'posts_per_page' ),
+		'category' =>  is_wp_error( $cat_obj ) ? 'false' : $cat_obj->term_id
+	));
 
 	// Search Shortcode Script
 	wp_enqueue_script( 'ajax_search', get_template_directory_uri() . '/js/search.js', array(), '1.0', true );

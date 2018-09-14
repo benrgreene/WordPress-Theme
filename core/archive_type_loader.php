@@ -7,7 +7,7 @@ class BG_Post_Archive_Delegator {
 	private $num_posts_to_grab;
 	private $max_num_posts;
 
-	function __construct( $post_type, $post_on=0, $search_for=false ) {
+	function __construct( $post_type, $post_on=0, $search_for=false, $in_category=false ) {
 		$this->num_posts_to_grab = get_option( 'posts_per_page' );
 		$this->post_on = $post_on;
 
@@ -22,15 +22,16 @@ class BG_Post_Archive_Delegator {
 			'posts_per_page' => -1,
 		);
 
-		if( !empty( get_query_var( 'cat' ) ) ) {
-			$this->category = get_category( get_query_var( 'cat' ) );
-			$args['category'] = $this->category->term_id;
+		if( !empty( get_query_var( 'cat' ) ) || false !== $in_category ) {
+			$this->category = $in_category ? $in_category : get_category( get_query_var( 'cat' ) )->term_id;			
+			$args['category'] = $this->category;
 		} else {
 			$this->category = false;
 		}
 
 		$this->post_type = $post_type;
-		$this->max_num_posts = count( get_posts( $rgs ) );
+		$this->max_num_posts = count( get_posts( $args ) );
+		error_log( $post_on );
 	}
 
 	function setup_as_search_archive( $post_on, $search_for ) {
@@ -58,6 +59,9 @@ class BG_Post_Archive_Delegator {
 			'orderby'		      => 'id',
 			'order'			      => 'DESC',
 		);
+		if( false !== $this->category ) {
+			$args['category'] = $this->category;
+		}
 		
 		if( 'search' == $this->post_type ):
 			$args['s'] = $this->search_for;
@@ -75,8 +79,8 @@ class BG_Post_Archive_Delegator {
 	function print_posts( $all_posts ) {
 		foreach ( $all_posts as $post ):
 			$this->print_post( $post );
+			$this->print_is_last_post( $post );
 		endforeach; 
-		$this->print_is_last_post( $post );
 	}
 
 	function print_is_last_post( $post ) {

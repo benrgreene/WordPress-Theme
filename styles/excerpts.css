@@ -101,14 +101,14 @@
 }
 
 .post--stacked .post__media {
-	width: 0;
+	margin-right: 15px;
+	width: 175px;
 	overflow: hidden;
 	transition: width .2s, margin-right .2s;
 }
 
 .post--stacked:hover .post__media {
-	margin-right: 30px;
-	width: 175px;
+	margin-right: 50px;
 }
 
 .post--stacked:hover::after {
