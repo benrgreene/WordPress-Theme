@@ -18,10 +18,6 @@ include 'core/theme/theme-filters.php';
 include 'core/settings.php';
 new BRG_Theme_Settings_Admin_Interface_Controller();
 
-// Post types
-include 'core/post-types/notices.php';
-include 'core/post-types/events.php';
-
 function load_theme_info() {
 	// Header 		- baloo thambi
 	// Body 		- ubuntu
