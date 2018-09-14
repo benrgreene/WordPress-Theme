@@ -11,22 +11,14 @@ function brg_add_rest_endpoints() {
 
 // Return basic info of each post
 function brg_get_search_results( WP_REST_Request $request ) {
-  global $post;
-  $query = new WP_Query( array( 
-    's' => $request->get_param('search'),
-  ) );
-
+  $loader = new BG_Post_Archive_Delegator(
+    'search', 
+    $data['on']
+  );
+  
   ob_start();
-  $to_return = '';
-  echo '<div class="grid-contain">';
-  foreach( $query->posts as $post ) {
-    setup_postdata( $post );
-    get_template_part( 'templates/excerpts/excerpt', 'grid' );
-  }
-  echo '</div>';
-  $to_return = ob_get_clean();
-
-  return $to_return;
+  $loader->get_next_posts();
+  return ob_get_clean();
 }
 
 // Add an endpoint for loading the posts

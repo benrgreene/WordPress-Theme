@@ -4,6 +4,8 @@
 $archive_type = 'post';
 if( $wp_query->query && isset( $wp_query->query['post_type'] ) ):
   $archive_type = $wp_query->query['post_type'];
+elseif( is_search() ):
+  $archive_type = 'search';
 endif;
 $archive_loader = new BG_Post_Archive_Delegator( $archive_type );
 
