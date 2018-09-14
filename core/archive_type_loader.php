@@ -8,7 +8,7 @@ class BG_Post_Archive_Delegator {
 	private $max_num_posts;
 
 	function __construct( $post_type, $post_on=0 ) {
-		$this->num_posts_to_grab = 3;
+		$this->num_posts_to_grab = get_option( 'posts_per_page' );
 		$this->post_on = $post_on;
 
 		if( 'search' == $post_type ):
