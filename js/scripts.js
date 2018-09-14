@@ -5,10 +5,6 @@
 	$(document).ready(function(){
 		api_endpoint = $('#site_base_url').val() + '/wp-json/';
 		// Need fitvids and magnific.
-
-		if( $('#js-events-type') ) {
-			load_events();
-		}
 	});
 
 	$(document).on('click', '#js-ajax-load-posts', function(event) {
@@ -55,30 +51,6 @@
 		$('.notice').hide();
 		sessionStorage.setItem('notice-dismissed', 'true');
 	});
-
-	// Events AJAX form submit	
-	$(document).on('change', '#js-events-type', function(e) {
-		load_events();
-	});
-
-	function load_events() {
-		var type = $('#js-events-type').val();
-		$.ajax({
-			'url': $('#site_base_url').val() + '/wp-json/brg/events/' + type,
-			success: function(results) {
-				var data = JSON.parse(results);
-				$('#events-container').html('');
-				for(var i = 0; i < data.length; i++) {
-					$('#events-container').append(`
-           <a class="single-event" href="` + data[i]['post_link'] + `">
-            <h3 class="single-event__title">` + data[i]['title'] + `</h3>
-            <p>` + data[i]['excerpt'] + `</p>
-           </a>
-          `);
-				}
-			}
-		});
-	}
 })(jQuery);
 
 const parentMenus = document.querySelectorAll('.sub-menu');
