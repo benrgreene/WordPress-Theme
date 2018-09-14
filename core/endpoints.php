@@ -12,12 +12,13 @@ function brg_add_rest_endpoints() {
 // Return basic info of each post
 function brg_get_search_results( WP_REST_Request $request ) {
   $loader = new BG_Post_Archive_Delegator(
-    'search', 
-    $data['on']
+    'search', 0, $request['search']
   );
   
   ob_start();
+  echo '<div class="grid-contain">';
   $loader->get_next_posts();
+  echo '</div>';
   return ob_get_clean();
 }
 

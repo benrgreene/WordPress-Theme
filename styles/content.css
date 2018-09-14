@@ -146,6 +146,7 @@ dialog {
   height: 80vh;
   width: 80vw;
   overflow: hidden;
+  overflow-y: scroll;
 }
 
 dialog .gird--contain {

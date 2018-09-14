@@ -2,7 +2,8 @@
 	margin: auto;
 	width: 100%;
 	max-width: 1030px;
-	padding: 0 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .grid-contain {
@@ -58,10 +59,11 @@
 	transition: height .5s;
 }
 
-.post--grid .post-title {
+.post--grid .post__title {
 	overflow: hidden;
-	height: 100px;
+	margin: 0;
 	padding: 10px 20px;
+	height: 100px;
 	line-height: 40px;
 	font-size: 40px;
 }
@@ -70,7 +72,7 @@
 	height: 100%;
 }
 
-.post-excerpt {
+.post__excerpt {
 	padding: 0 20px;
 }
 
@@ -121,8 +123,4 @@
 .post--stacked .post__title {
 	margin: 0 0 15px;
 	font-size: 35px;
-}
-
-.post--stacked .post__excerpt {
-
 }

@@ -7,12 +7,13 @@ class BG_Post_Archive_Delegator {
 	private $num_posts_to_grab;
 	private $max_num_posts;
 
-	function __construct( $post_type, $post_on=0 ) {
+	function __construct( $post_type, $post_on=0, $search_for=false ) {
 		$this->num_posts_to_grab = get_option( 'posts_per_page' );
 		$this->post_on = $post_on;
 
 		if( 'search' == $post_type ):
-			$this->setup_as_search_archive( $post_on );
+			$this->search_for = $search_for ? $search_for : get_search_query();
+			$this->setup_as_search_archive( $post_on, $search_for );
 			return;
 		endif;
 
@@ -23,10 +24,10 @@ class BG_Post_Archive_Delegator {
 		) ) );
 	}
 
-	function setup_as_search_archive( $post_on ) {
+	function setup_as_search_archive( $post_on, $search_for ) {
 		$this->post_type = 'search';
 		$search_args = array(
-			's' 				      => get_search_query(),
+			's' 				      => $this->search_for,
 			'posts_per_page'	=> -1,
 			'orderby'		      => 'id',
 			'order'			      => 'DESC',
@@ -41,6 +42,7 @@ class BG_Post_Archive_Delegator {
 			return;
 		}
 
+		$posts_to_print = array();
 		$args = array(
 			'posts_per_page'	=> $this->num_posts_to_grab,
 			'offset'			    => $this->post_on,
@@ -49,12 +51,13 @@ class BG_Post_Archive_Delegator {
 		);
 		
 		if( 'search' == $this->post_type ):
-			$args['s'] = get_search_query();
+			$args['s'] = $this->search_for;
+			$posts_to_print = new WP_Query( $args );
+			$posts_to_print = $posts_to_print->posts;
 		else:
 			$args['post_type'] = $this->post_type;
+			$posts_to_print = get_posts( $args );
 		endif;
-
-		$posts_to_print = get_posts( $args );
 
 		$this->post_on = count( $posts_to_print ) + $this->post_on;
 		$this->print_posts( $posts_to_print );
