@@ -1,11 +1,8 @@
-.page_title {
+h2,
+.page_title,
+.post__title {
   border-bottom: 5px solid primary_theme_color;
   color: primary_theme_color;
-}
-
-h2 {
-  color: primary_theme_color;
-  border-bottom: 2px solid primary_theme_color;
 }
 
 a {
@@ -24,19 +21,21 @@ a {
   background-color: white;
 }
 
-.post__title  {
-  color: primary_light_theme_color;
-}
-
-.site-footer {
+.site-header {
   background-color: primary_theme_color;
   color: accent_theme_color;
 }
 
+.site-header a,
 .site-footer a {
   color: inherit;
 }
 
-.site-header {
-  background-color: header_background_color;
+.site-header .sub-menu a {
+  color: primary_theme_color;
+}
+
+.site-footer {
+  background-color: footer_background_color;
+  color: accent_theme_color;
 }

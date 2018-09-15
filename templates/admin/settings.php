@@ -10,22 +10,22 @@
       <tr>
         <td>Primary Theme Color</td>
         <td><input name="primary_theme_color" id="primary_theme_color" value="<?php echo get_option('primary_theme_color'); ?>" /></td>
-        <td>This will be the main color used as the footer background color, and title colors.</td>
+        <td>This will be the main color used as the header background color, and as the page title color.</td>
       </tr>
       <tr>
-        <td>Primary Theme Color Light</td>
+        <td>Primary Theme Color - Light</td>
         <td><input name="primary_light_theme_color" id="primary_light_theme_color" value="<?php echo get_option('primary_light_theme_color'); ?>" /></td>
-        <td>This will be the light version of the main color used.</td>
+        <td>This will used for links in the page.</td>
       </tr>
       <tr>
         <td>Accent Theme Color</td>
         <td><input name="accent_theme_color" id="accent_theme_color" value="<?php echo get_option('accent_theme_color'); ?>" /></td>
-        <td>The accent color will be used as the link color.</td>
+        <td>The accent color will be used as the link color in the header and footer.</td>
       </tr>
       <tr>
-        <td>Header Background Color</td>
-        <td><input name="header_background_color" id="header_background_color" value="<?php echo get_option('header_background_color'); ?>" /></td>
-        <td>The header's background color.</td>
+        <td>Footer Background Color</td>
+        <td><input name="footer_background_color" id="footer_background_color" value="<?php echo get_option('footer_background_color'); ?>" /></td>
+        <td>The footer's background color.</td>
       </tr>
     </table>
 
