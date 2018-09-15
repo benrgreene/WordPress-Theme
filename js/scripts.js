@@ -11,7 +11,7 @@
 		
     // make sure the site content wrapper has the proper padding
     setTimeout(function() {
-      var padding = $('.site-header').height();
+      var padding = $('.site-header').height() - 2;
       $('.site-content').css('padding-top', padding);
     }, 10);
 	});
