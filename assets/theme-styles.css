@@ -1,11 +1,8 @@
-.page_title {
+h2,
+.page_title,
+.post__title {
   border-bottom: 5px solid #304;
   color: #304;
-}
-
-h2 {
-  color: #304;
-  border-bottom: 2px solid #304;
 }
 
 a {
@@ -24,24 +21,31 @@ a {
   background-color: white;
 }
 
-.post__title  {
-  color: #304;
-}
-
-.site-footer {
-  background-color: #304;
+.menu-toggle {
   color: #fff;
-}
-
-.site-footer a {
-  color: inherit;
 }
 
 .site-header {
   background-color: #304;
+  color: #fff;
 }
 
-.site-footer a,
-.site-header a {
+.site-header a,
+.site-footer a {
+  color: inherit;
+}
+
+.site-header .sub-menu a {
+  color: #304;
+}
+
+.site-footer {
+  background-color: #203;
   color: #fff;
+}
+
+@media(max-width: 770px) {
+  .site-nav-menu a {
+    color: #304;
+  }
 }

@@ -90,8 +90,8 @@
 	text-decoration: none;
 }
 
-.post--stacked + .post--stacked {
-	margin-top: 50px;
+.post--stacked:not(:first-of-type) {
+	margin-top: 20px;
 }
 
 @media(max-width: 770px) {
@@ -105,6 +105,10 @@
 
 	.post--stacked .post__media {
 		width: 100%;
+	}
+
+	.post--stacked:not(:first-of-type) {
+		margin-top: 50px;
 	}
 }
 
