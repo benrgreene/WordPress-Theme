@@ -67,6 +67,10 @@ p {
   .main-content {
     width: 100%;
   } 
+
+  .single-page--sidebar { 
+    flex-direction: column;
+  }
 }
 
 .post__categories,

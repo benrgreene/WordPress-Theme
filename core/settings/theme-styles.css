@@ -21,6 +21,10 @@ a {
   background-color: white;
 }
 
+.menu-toggle {
+  color: accent_theme_color;
+}
+
 .site-header {
   background-color: primary_theme_color;
   color: accent_theme_color;
@@ -38,4 +42,10 @@ a {
 .site-footer {
   background-color: footer_background_color;
   color: accent_theme_color;
+}
+
+@media(max-width: 770px) {
+  .site-nav-menu a {
+    color: primary_theme_color;
+  }
 }

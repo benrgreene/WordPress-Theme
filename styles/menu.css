@@ -56,11 +56,10 @@
 @media(max-width: 770px) {
   .site-header .menu {
     position: fixed;
-    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    padding-top: 80px;
+    padding-top: 30px;
     transition: background-color .2s ease 0s;
     background-color: #EEE;
     text-align: left;
@@ -77,10 +76,6 @@
     cursor: pointer;
     font-size: 30px;
     background: none;
-  }
-
-  .sub-menu__toggle {
-    display: inline-block;
   }
 
   .nav-open #menu-toggle {
@@ -122,8 +117,9 @@
 
   .sub-menu__toggle {
     position: absolute;
-    top: 8px;
+    top: -4px;
     right: 15px;
+    display: inline-block;
     font-size: 26px;
   }
 }
