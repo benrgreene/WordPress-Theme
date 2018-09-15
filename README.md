@@ -11,4 +11,4 @@ In the theme settings there are a couple things to set:
 
 ## Filters
 
-* `brg/displayed_member_fields`: returns array of ACF field slugs which are displayed on the user account pages. 
+* `brg/archived_post_types`: the post types to display in the theme settings for setting the display type (grid or stacked)
