@@ -17,7 +17,7 @@ function brg_add_body_classes( $classes ) {
 // their archives. 
 add_filter( 'brg/archived_post_types', 'brg_add_archived_post_types' );
 function brg_add_archived_post_types( $post_types ) {
-  return array( 'post' );
+  return array( 'post', 'search' );
 }
 
 // Add titles to the archive pages

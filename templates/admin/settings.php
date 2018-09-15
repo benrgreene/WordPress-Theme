@@ -33,17 +33,12 @@
     <?php $post_types = apply_filters( 'brg/archived_post_types', array() ); ?>
     <table>
       <?php foreach( $post_types as $post_type ): ?>
-        <?php $selected = get_option('brg_settings_display_' . $post_type); ?>
         <tr>
           <td>Display `<?php echo $post_type; ?>` post type as:</td>
-          <td><select name="brg_settings_display_<?php echo $post_type; ?>">
-            <option value="grid">Grid</option>
-            <option value="stacked"<?php if('stacked' == $selected): echo ' selected="selected"'; endif; ?>>Stacked</option>
-          </select></td>
+          <?php brg_the_display_type_select( $post_type ); ?>
         </tr>
       <?php endforeach; ?>
     </table>
-
     <?php submit_button(); ?>
   </form>
 </div>
