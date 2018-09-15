@@ -90,6 +90,24 @@
 	text-decoration: none;
 }
 
+.post--stacked + .post--stacked {
+	margin-top: 50px;
+}
+
+@media(max-width: 770px) {
+	.post--stacked {
+		flex-direction: column;
+	}
+	
+	.post--stacked::after {
+		display: none;
+	}
+
+	.post--stacked .post__media {
+		width: 100%;
+	}
+}
+
 .post--stacked::after {
 	content: ">";
 	position: absolute;
