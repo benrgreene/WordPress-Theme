@@ -51,7 +51,6 @@ class BRG_Theme_Settings_Admin_Interface_Controller {
 
         // Make all replacements with theme values
         foreach( $this->plugin_settings as $setting ) {
-            error_log($setting);
             $base_contents = str_replace( $setting, get_option( $setting ), 
             $base_contents );    
         }
