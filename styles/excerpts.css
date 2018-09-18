@@ -43,7 +43,7 @@
 	.post--grid {
 		width: 32%;
 	}
-	.post--grid:nth-child(3n+2) {
+	.post--grid:nth-of-type(3n+2) {
 		margin: 20px 2%;
 	}
 }
